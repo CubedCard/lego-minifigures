@@ -18,9 +18,9 @@ import javax.persistence.NamedQuery;
         }
 )
 public class Owner {
-    private String name;
     @Id
     private int id;
+    private String name;
 
     public Owner() {}
 

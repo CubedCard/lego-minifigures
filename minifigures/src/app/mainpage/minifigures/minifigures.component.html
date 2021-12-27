@@ -1,0 +1,7 @@
+<h1>Welcome to the minifigures page!</h1>
+<a routerLink="/home">Go to Home</a>
+<table>
+  <tr *ngFor="let minifigure of minifigures">
+    {{ minifigure.name }}
+  </tr>
+</table>
