@@ -21,6 +21,7 @@ import java.util.List;
 )
 public class Minifigure {
     @Id
+    @GeneratedValue
     private int id;
     @ManyToMany(cascade = CascadeType.DETACH)
     private List<Owner> owners;

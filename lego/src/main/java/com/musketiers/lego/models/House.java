@@ -1,9 +1,6 @@
 package com.musketiers.lego.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 /**
  * This class <description of functionality>
@@ -19,6 +16,7 @@ import javax.persistence.NamedQuery;
 )
 public class House {
     @Id
+    @GeneratedValue
     private int id;
     private String name;
 

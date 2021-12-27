@@ -1,7 +1,103 @@
 <h1>Welcome to the minifigures page!</h1>
 <a routerLink="/home">Go to Home</a>
-<table>
-  <tr *ngFor="let minifigure of minifigures">
-    {{ minifigure.name }}
+<button type="button" class="btn btn-dark ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+  Minifigure
+</button>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Female</th>
+    <th scope="col">Old</th>
+    <th scope="col">Stupid Level</th>
+    <th scope="col">Job</th>
+    <th scope="col">Theme</th>
+    <th scope="col">Owners</th>
+    <th scope="col">Homeless</th>
+    <th scope="col">House</th>
+    <th scope="col">Location</th>
   </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let minifigure of minifigures; index as i">
+    <th scope="row">{{ i }}</th>
+    <td>{{ minifigure.name }}</td>
+    <td>{{ minifigure.female }}</td>
+    <td>{{ minifigure.old }}</td>
+    <td>{{ minifigure.stupidLevel }}</td>
+    <td>{{ minifigure.job }}</td>
+    <td>{{ minifigure.theme }}</td>
+    <td>{{ minifigure.owners }}</td>
+    <td>{{ minifigure.homeless }}</td>
+    <td>{{ minifigure.house }}</td>
+    <td>{{ minifigure.location }}</td>
+  </tr>
+  </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Minifigure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input #name type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Stupid Level</label>
+            <select #stupidLevel class="form-control" id="exampleInputPassword1">
+              <option *ngFor="let stupid of stupidLevels; index as i" value="{{ i }}">{{ stupid }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleSize" class="form-label">Stupid Level</label>
+            <select #size class="form-control" id="exampleSize">
+              <option *ngFor="let size of sizes; index as i" value="{{ i }}">{{ size }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="exampleTheme">Theme</label>
+            <input #theme type="text" class="form-control" id="exampleTheme">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="exampleLocation">Location</label>
+            <input #location type="text" class="form-control" id="exampleLocation">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="exampleOwner">Owner</label>
+            <input #owner type="text" class="form-control" id="exampleOwner">
+          </div>
+          <div class="mb-3 form-check">
+            <label class="form-check-label" for="exampleFemale">Female</label>
+            <input #female type="checkbox" class="form-check-input" id="exampleFemale">
+          </div>
+          <div class="mb-3 form-check">
+            <label class="form-check-label" for="exampleOld">Old</label>
+            <input #old type="checkbox" class="form-check-input" id="exampleOld">
+          </div>
+          <div class="mb-3 form-check">
+            <label class="form-check-label" for="exampleHomeless">Homeless</label>
+            <input #homeless type="checkbox" class="form-check-input" id="exampleHomeless">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="exampleJob">Job</label>
+            <input #job type="text" class="form-control" id="exampleJob">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="exampleHouse">House</label>
+            <input #house type="text" class="form-control" id="exampleHouse">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="add(owner, name, location, female, old, theme, job, homeless, house, stupidLevel)">Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

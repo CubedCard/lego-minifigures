@@ -45,7 +45,8 @@ public class LegoApplication implements CommandLineRunner {
                 new Owner("Jip")
         );
         this.minifigureRepository.add(
-                new Minifigure(List.of(new Owner("Jip")), "Jip", "Apple Store", false, false, "real-life", "Software Engineer", false, new House("Apple Store"), StupidLevel.NORMAAL)
+                new Minifigure(this.ownerRepository.findAll(), "Jip", "Apple Store", false, false, "real-life",
+                        "Software Engineer", false, this.houseRepository.findAll().get(0), StupidLevel.NORMAAL)
         );
     }
 }
