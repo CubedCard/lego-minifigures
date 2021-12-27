@@ -1,4 +1,9 @@
-package com.musketiers.lego.models;
+package com.musketiers.lego.models.mini;
+
+import com.musketiers.lego.models.*;
+import com.musketiers.lego.models.enums.Packaging;
+import com.musketiers.lego.models.enums.Size;
+import com.musketiers.lego.models.enums.StupidLevel;
 
 import java.util.List;
 

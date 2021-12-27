@@ -1,6 +1,6 @@
 package com.musketiers.lego.repositories;
 
-import com.musketiers.lego.models.Owner;
+import com.musketiers.lego.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -19,38 +19,38 @@ import java.util.List;
 @Repository
 @Component
 @Transactional
-public class OwnerRepository implements ElementRepository<Owner> {
+public class UserRepository implements ElementRepository<User> {
 
     @Autowired
     private EntityManager em;
 
     @Override
-    public List<Owner> findAll() {
-        TypedQuery<Owner> namedQuery = em.createNamedQuery("find_all_owners", Owner.class);
+    public List<User> findAll() {
+        TypedQuery<User> namedQuery = em.createNamedQuery("find_all_users", User.class);
         return namedQuery.getResultList();
     }
 
     @Override
-    public Owner add(Owner owner) {
-        return this.em.merge(owner);
+    public User add(User user) {
+        return this.em.merge(user);
     }
 
     @Override
-    public Owner update(Owner owner) {
-        return this.em.merge(owner);
+    public User update(User user) {
+        return this.em.merge(user);
     }
 
     @Override
-    public boolean delete(Owner owner) {
+    public boolean delete(User user) {
         int oldSize = this.findAll().size();
-        this.em.remove(owner);
+        this.em.remove(user);
         int sizeDiff = oldSize - this.findAll().size();
 
         return sizeDiff > 0;
     }
 
     @Override
-    public Owner findById(int id) {
-        return this.em.find(Owner.class, id);
+    public User findById(int id) {
+        return this.em.find(User.class, id);
     }
 }

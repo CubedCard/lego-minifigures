@@ -1,4 +1,8 @@
-package com.musketiers.lego.models;
+package com.musketiers.lego.models.mini;
+
+import com.musketiers.lego.models.House;
+import com.musketiers.lego.models.Owner;
+import com.musketiers.lego.models.enums.StupidLevel;
 
 import javax.persistence.*;
 import java.util.List;

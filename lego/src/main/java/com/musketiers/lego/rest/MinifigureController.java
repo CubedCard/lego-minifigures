@@ -1,6 +1,6 @@
 package com.musketiers.lego.rest;
 
-import com.musketiers.lego.models.Minifigure;
+import com.musketiers.lego.models.mini.Minifigure;
 import com.musketiers.lego.repositories.MinifigureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

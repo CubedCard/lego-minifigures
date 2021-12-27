@@ -1,4 +1,4 @@
-package com.musketiers.lego.models;
+package com.musketiers.lego.models.enums;
 
 public enum Packaging {
     BAG,

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -25,7 +26,8 @@ public class HouseRepository implements ElementRepository<House> {
 
     @Override
     public List<House> findAll() {
-        return null;
+        TypedQuery<House> namedQuery = em.createNamedQuery("find_all_houses", House.class);
+        return namedQuery.getResultList();
     }
 
     @Override

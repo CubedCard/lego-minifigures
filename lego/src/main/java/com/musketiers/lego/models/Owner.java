@@ -2,6 +2,8 @@ package com.musketiers.lego.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  * This class <description of functionality>
@@ -10,6 +12,11 @@ import javax.persistence.Id;
  */
 
 @Entity
+@NamedQueries(
+        {
+                @NamedQuery(name = "find_all_owners", query = "SELECT o FROM Owner o"),
+        }
+)
 public class Owner {
     private String name;
     @Id

@@ -1,6 +1,6 @@
 package com.musketiers.lego.repositories;
 
-import com.musketiers.lego.models.*;
+import com.musketiers.lego.models.mini.Minifigure;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
